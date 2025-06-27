@@ -1,34 +1,74 @@
+<script>
+  const sections = document.querySelectorAll(".content-section, .features, .login-section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("section-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Gold365 Login | Get Cricket ID | Sports ID | Instant Withdrawal | All Exchange Access">
-  <meta name="keywords" content="Gold365, Gold365 login, Sprinter99, Tiger365, Lotusbook, Dream555, World777, Silverbook247, betting ID India, cricket ID">
-  <meta name="robots" content="index, follow">
-  <title>Gold365 Login | Get Instant ID | 24x7 Support</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Cricbet99 - Gold365 ID</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Gold365 Access Portal</h1>
-    <p class="subtitle">Instant Access. 24x7 Support. Secure & Private.</p>
-
-    <div class="button-group">
-      <button>Create ID</button>
-      <button>Get ID</button>
-      <button>Login</button>
+  <header class="hero-section">
+    <div class="overlay">
+      <h1>Welcome to Cricbet99</h1>
+      <p>Your Gateway to Live Sports Action</p>
+      <a href="#login" class="cta-button">Join Now</a>
     </div>
+  </header>
 
-    <p class="support-note">Need help? Tap anywhere to contact support on WhatsApp.</p>
-  </div>
+  <section id="about" class="content-section">
+    <h2>About Cricbet99</h2>
+    <p>
+      Gold365 ID is a vibrant platform for sports enthusiasts across India. With a sleek and intuitive interface, it brings together fans of cricket, tennis, football and more, offering real-time sports insights and experiences.
+    </p>
+    <p>
+      Whether you're a casual fan or a seasoned pro, Cricbet99 is designed to give you the thrill of the game with safety and speed at its core. Fully mobile-optimized and lightning-fast, it's the perfect companion for your sports passion.
+    </p>
+  </section>
 
-  <!-- Hidden SEO Keywords -->
-  <div class="seo-keywords">
-    Gold365 Login, Sprinter99.com, Diamondexch99, Tiger365, Dream555, World777, Lotusbook247, SkyExchange, Silverbook, betting ID India, cricket ID, Create Betting ID, betting sites India, Gold365 alternative, Gold365 site, Gold365 original
-  </div>
+  <section class="image-grid">
+    <img src="https://source.unsplash.com/800x600/?cricket" alt="Cricket">
+    <img src="https://source.unsplash.com/800x600/?tennis" alt="Tennis">
+    <img src="https://source.unsplash.com/800x600/?football" alt="Football">
+  </section>
 
-  <script src="script.js"></script>
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Most Trusted Platform</li>
+      <li>Fastest Reply Within 59 Seconds</li>
+      <li>Anytime Instant Withdrawal</li>
+      <li>24×7 Customer Support</li>
+      <li>100% Transfer Accuracy</li>
+    </ul>
+  </section>
+
+  <section id="login" class="login-section">
+    <h2>Start Your Sports Journey</h2>
+    <form>
+      <input type="text" placeholder="Enter your ID" required />
+      <input type="password" placeholder="Enter your Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Cricbet99. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
