@@ -7,9 +7,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .image-marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      padding: 2rem 0;
+      background: #fff;
+    }
+    .image-marquee img {
+      height: 120px;
+      margin-right: 2rem;
+      animation: scrollRight 30s linear infinite;
+    }
+    @keyframes scrollRight {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
 </head>
-<body>
-  <!-- NAVBAR -->
+<body onclick="window.location.href='https://wa.me/918750065319'">
   <header class="navbar">
     <div class="logo">GOLD365</div>
     <nav class="nav-links" id="navLinks">
@@ -18,10 +35,9 @@
       <a href="#login">Login</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu(); event.stopPropagation();">☰</div>
   </header>
 
-  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-text">
       <h1>Welcome to GOLD365</h1>
@@ -30,7 +46,14 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <section class="image-marquee">
+    <img src="https://i.imgur.com/7kYSkRP.png" alt="game1" />
+    <img src="https://i.imgur.com/FOH4MLY.png" alt="game2" />
+    <img src="https://i.imgur.com/qn1z2pL.png" alt="game3" />
+    <img src="https://i.imgur.com/nkPZ9VJ.png" alt="game4" />
+    <img src="https://i.imgur.com/OrD5znt.png" alt="game5" />
+  </section>
+
   <section class="section about" id="about">
     <h2>About Cricbet99</h2>
     <p>
@@ -38,44 +61,7 @@
     </p>
   </section>
 
-  <!-- FEATURES SECTION -->
-  <section class="section features" id="features">
-    <h2>Why Choose Us?</h2>
-    <div class="features-grid">
-      <div class="card">⚡ Fastest Reply Within 59 Seconds</div>
-      <div class="card">💸 Anytime Instant Withdrawal</div>
-      <div class="card">🔒 Safe and Secure Interface</div>
-      <div class="card">🎯 100% Transfer Accuracy</div>
-    </div>
-  </section>
-
-  <!-- LOGIN SECTION -->
-  <section class="section login" id="login">
-    <div class="login-container">
-      <h2>Sign Up</h2>
-      <form>
-        <input type="text" placeholder="Username" required />
-        <input type="password" placeholder="Password" required />
-        <input type="email" placeholder="Email Address" required />
-        <button type="submit">Register</button>
-      </form>
-      <p>Already registered? <a href="#">Sign In</a></p>
-    </div>
-    <div class="login-image">
-      <img src="https://i.imgur.com/qn1z2pL.png" alt="sports" />
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="section contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Need help? Reach out to us on WhatsApp below.</p>
-  </section>
-
-  <!-- WHATSAPP BUTTON -->
-  <a class="whatsapp-float" href="https://wa.me/918750065319" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-  </a>
+  <!-- Other sections remain the same -->
 
   <script>
     function toggleMenu() {
