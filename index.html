@@ -1,74 +1,87 @@
-<script>
-  const sections = document.querySelectorAll(".content-section, .features, .login-section");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("section-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  sections.forEach(section => observer.observe(section));
-</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cricbet99 - Gold365 ID</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOLD365</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <header class="hero-section">
-    <div class="overlay">
-      <h1>Welcome to Cricbet99</h1>
-      <p>Your Gateway to Live Sports Action</p>
-      <a href="#login" class="cta-button">Join Now</a>
-    </div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">GOLD365</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#login">Login</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </header>
 
-  <section id="about" class="content-section">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to GOLD365</h1>
+      <p>India's most dynamic sports experience platform</p>
+      <a href="#login" class="cta-btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section about" id="about">
     <h2>About Cricbet99</h2>
     <p>
-      Gold365 ID is a vibrant platform for sports enthusiasts across India. With a sleek and intuitive interface, it brings together fans of cricket, tennis, football and more, offering real-time sports insights and experiences.
-    </p>
-    <p>
-      Whether you're a casual fan or a seasoned pro, Cricbet99 is designed to give you the thrill of the game with safety and speed at its core. Fully mobile-optimized and lightning-fast, it's the perfect companion for your sports passion.
+      Gold365 id is a vibrant sports-themed platform loved by many. It offers a range of sports content, designed for Indian users who enjoy excitement and interaction. It's fast, colorful, responsive and easy to access on any device.
     </p>
   </section>
 
-  <section class="image-grid">
-    <img src="https://source.unsplash.com/800x600/?cricket" alt="Cricket">
-    <img src="https://source.unsplash.com/800x600/?tennis" alt="Tennis">
-    <img src="https://source.unsplash.com/800x600/?football" alt="Football">
-  </section>
-
-  <section class="features">
+  <!-- FEATURES SECTION -->
+  <section class="section features" id="features">
     <h2>Why Choose Us?</h2>
-    <ul>
-      <li>Most Trusted Platform</li>
-      <li>Fastest Reply Within 59 Seconds</li>
-      <li>Anytime Instant Withdrawal</li>
-      <li>24×7 Customer Support</li>
-      <li>100% Transfer Accuracy</li>
-    </ul>
+    <div class="features-grid">
+      <div class="card">⚡ Fastest Reply Within 59 Seconds</div>
+      <div class="card">💸 Anytime Instant Withdrawal</div>
+      <div class="card">🔒 Safe and Secure Interface</div>
+      <div class="card">🎯 100% Transfer Accuracy</div>
+    </div>
   </section>
 
-  <section id="login" class="login-section">
-    <h2>Start Your Sports Journey</h2>
-    <form>
-      <input type="text" placeholder="Enter your ID" required />
-      <input type="password" placeholder="Enter your Password" required />
-      <button type="submit">Login</button>
-    </form>
+  <!-- LOGIN SECTION -->
+  <section class="section login" id="login">
+    <div class="login-container">
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <input type="email" placeholder="Email Address" required />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already registered? <a href="#">Sign In</a></p>
+    </div>
+    <div class="login-image">
+      <img src="https://i.imgur.com/qn1z2pL.png" alt="sports" />
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Cricbet99. All rights reserved.</p>
-  </footer>
+  <!-- CONTACT SECTION -->
+  <section class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Need help? Reach out to us on WhatsApp below.</p>
+  </section>
 
+  <!-- WHATSAPP BUTTON -->
+  <a class="whatsapp-float" href="https://wa.me/918750065319" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
