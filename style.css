@@ -1,188 +1,182 @@
-/* Reset and Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
 body {
-  background: #111;
-  color: #fff;
-  scroll-behavior: smooth;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f8ff;
 }
 
-/* Hero Section */
-.hero-section {
-  background: url('https://source.unsplash.com/1600x900/?cricket,stadium') center/cover no-repeat;
-  height: 100vh;
+.navbar {
+  background: #6a0dad;
+  color: white;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.6);
-  padding: 2rem;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.hero {
+  background: linear-gradient(to right, #6a0dad, #9f2bff);
+  color: white;
+  padding: 8rem 2rem 5rem;
   text-align: center;
-  animation: fadeIn 2s ease-in-out;
 }
 
-.overlay h1 {
+.hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  animation: slideInDown 1.2s ease-out;
 }
 
-.overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  animation: slideInUp 1.5s ease-out;
-}
-
-.cta-button {
-  background: #ffcc00;
-  color: #000;
-  padding: 1rem 2rem;
+.cta-btn {
+  background: white;
+  color: #6a0dad;
+  padding: 0.7rem 1.5rem;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
+  border-radius: 5px;
+  transition: all 0.3s;
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ffcc00;
+.cta-btn:hover {
+  background: #ddd;
 }
 
-/* Sections */
-.content-section, .features, .login-section {
+.section {
   padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.section-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.content-section h2,
-.features h2,
-.login-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #ffcc00;
-}
-
-/* Image Grid */
-.image-grid {
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.image-grid img {
-  width: 100%;
-  height: 100%;
+.card {
+  background: #f3e5f5;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-}
-
-/* Features List */
-.features ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features ul li {
-  padding: 0.6rem 0;
+  padding: 1.5rem;
   font-size: 1.1rem;
-  border-bottom: 1px dashed #444;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
-/* Login Section */
-.login-section form {
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.login {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.login-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.login-container form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 400px;
-  margin: 2rem auto;
 }
 
-.login-section input {
-  padding: 1rem;
+.login-container input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  background: #6a0dad;
+  color: white;
+  padding: 0.8rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
-}
-
-.login-section button {
-  background: #ffcc00;
-  color: #000;
-  padding: 1rem;
   font-weight: bold;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s ease;
 }
 
-.login-section button:hover {
-  background: #ffd633;
-  box-shadow: 0 0 10px #ffcc00;
+.login-image {
+  flex: 1;
+  min-width: 300px;
 }
 
-/* Footer */
-footer {
-  background: #000;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
+.login-image img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  z-index: 99;
 }
 
-@keyframes slideInDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.whatsapp-float img {
+  width: 100%;
 }
 
-@keyframes slideInUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background: #6a0dad;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0px #ffcc00; }
-  50% { box-shadow: 0 0 15px #ffcc00; }
-  100% { box-shadow: 0 0 0px #ffcc00; }
-}
+  .nav-links.active {
+    display: flex;
+  }
 
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-  .overlay h1 {
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
     font-size: 2rem;
   }
-  .overlay p {
-    font-size: 1rem;
+
+  .login {
+    flex-direction: column-reverse;
+    text-align: center;
   }
 }
