@@ -1,56 +1,188 @@
-body {
+/* Reset and Base */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f1f5f9;
-  color: #111;
-  text-align: center;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #111;
+  color: #fff;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('https://source.unsplash.com/1600x900/?cricket,stadium') center/cover no-repeat;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.container {
-  padding: 20px;
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
 }
 
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  color: #1d4ed8;
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: slideInDown 1.2s ease-out;
 }
 
-.subtitle {
+.overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: slideInUp 1.5s ease-out;
+}
+
+.cta-button {
+  background: #ffcc00;
+  color: #000;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+/* Sections */
+.content-section, .features, .login-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-section h2,
+.features h2,
+.login-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffcc00;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+}
+
+/* Features List */
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features ul li {
+  padding: 0.6rem 0;
   font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #334155;
+  border-bottom: 1px dashed #444;
 }
 
-.button-group button {
-  padding: 15px 25px;
-  margin: 10px;
-  font-size: 1rem;
+/* Login Section */
+.login-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.login-section input {
+  padding: 1rem;
   border: none;
-  background: #2563eb;
-  color: white;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-section button {
+  background: #ffcc00;
+  color: #000;
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: 0.3s ease;
 }
 
-.button-group button:hover {
-  background: #1e40af;
+.login-section button:hover {
+  background: #ffd633;
+  box-shadow: 0 0 10px #ffcc00;
 }
 
-.support-note {
-  margin-top: 20px;
-  color: #555;
+/* Footer */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 1rem;
   font-size: 0.9rem;
+  color: #aaa;
 }
 
-.seo-keywords {
-  position: absolute;
-  left: -9999px;
-  visibility: hidden;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px #ffcc00; }
+  50% { box-shadow: 0 0 15px #ffcc00; }
+  100% { box-shadow: 0 0 0px #ffcc00; }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+  .overlay p {
+    font-size: 1rem;
+  }
 }
